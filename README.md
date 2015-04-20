@@ -269,7 +269,7 @@ If you want to have certain styling only applied to (for example) the frontpage,
 ```html
 <body class="frontpage">
 	<div class="hero">
-	  <h1 class="hero__title hero__title--large">Title</h1>
+	  <h1 class="hero__title hero__title">Title</h1>
 	  <p class="hero__content">
 	    Body comes here.
 	  </p>
