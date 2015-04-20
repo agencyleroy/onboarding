@@ -111,6 +111,11 @@ If you do choose Vim, please teach others.
 
 ## SCSS
 
+### Framework
+* We use Zurb Foundation
+* For most things, Foundation has an answer so it really pays off to read through the documentation carefully
+* Always remove unused components from the SCSS imports
+
 ### Formatting
 * Use hyphens when naming mixins, extends, classes & variables: `span-columns` not `span_columns` or `spanColumns`
 * Use space between property and value: `width: 20px` not `width:20px`
