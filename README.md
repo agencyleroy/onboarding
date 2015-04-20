@@ -237,7 +237,7 @@ BEM stands for Block Element Modifier and provides a ruleset for naming of CSS c
 ```html
   <div class='tip tip--padded'>
     <h4 class="tip__title">Title</h4>
-    <p class='tip__content'>#{content}</p>
+    <p class='tip__content'>Content</p>
   </div>
 ```
 
@@ -259,6 +259,17 @@ If you want to have certain styling only applied to (for example) the frontpage,
       font-size: 12px;
     }
   }
+```
+
+```html
+<body class="frontpage">
+	<div class="hero">
+	  <h1 class="hero__title hero__title--large">Title</h1>
+	  <p class="hero__content">
+	    Body comes here.
+	  </p>
+	</div>
+</body>
 ```
 
 If the styling has to be applied to more than one page, consider using a --modifier instead:
