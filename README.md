@@ -187,6 +187,100 @@ a {
 * Avoid using comma delimited selectors
 * Avoid nesting within a media query
 
+## BEM CSS
+
+BEM stands for Block Element Modifier and provides a ruleset for naming of CSS classes. While the syntax might seem weird at first, the benefits provided clearly outweights any downsides. Each block should be built as a stand alone component that can be inserted anywhere on the webpage without breaking. The styling of each block should be separated into a single partial scss file, which may use globally defined variables and mixins.
+
+### Folder structure
+
+```
+  # For SCSS
+  - components
+    - _panels.scss
+    - _slideshows.scss
+    - _tabs.scss
+    - _side-nav.scss
+  main.scss
+  
+  # For Javascript/Coffeescript
+  - components
+    - _panels.coffee
+    - _slideshows.coffee
+    - _tabs.coffee
+    - _side-nav.coffee
+```
+
+### Naming
+
+```scss
+.tip {
+  background: $secondary-color;
+  &__title {
+    color: #219251;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    text-transform: none;
+  }
+  &__content {
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+  }
+  &--padded {
+    padding: 30px;
+  }
+}
+```
+
+```html
+  <div class='tip tip--padded'>
+    <h4 class="tip__title">Title</h4>
+    <p class='tip__content'>#{content}</p>
+  </div>
+```
+
+### Special cases
+
+If you want to have certain styling only applied to (for example) the frontpage, this is not defined in a frontpage.scss file but by using scss parent selector syntax:
+
+```scss
+  .hero {
+    height: 600px;
+    width: 100%;
+    &__title {
+      font-size: 36px;
+      .frontpage & {
+        font-size: 50px;
+      }
+    }
+    &__content {
+      font-size: 12px;
+    }
+  }
+```
+
+If the styling has to be applied to more than one page, consider using a --modifier instead:
+
+```scss
+    &__title {
+      font-size: 36px;
+      &--large & {
+        font-size: 50px;
+      }
+   }
+```
+
+```html
+<div class="hero">
+  <h1 class="hero__title hero__title--large">Title</h1>
+  <p class="hero__content">
+    Body comes here.
+  </p>
+</div>
+```
+
 ## JavaScript
 * **CoffeeScript** > JavaScript (CoffeeScript encourages a more object-oriented design and is more readable and compiles to more efficient javascript code than most developers are capable of writing themselves, without making it any harder)
 * AngularJS / Backbone.js / Ember.js
