@@ -28,6 +28,14 @@ Agency Leroy Developer Guidelines
 * Inspect and manipulate your PostgreSQL database
 
 	![http://f.cl.ly/items/1j1P0N0D1h0I0S1y3z04/Screen%20Shot%202013-08-12%20at%2009.00.17.png](http://f.cl.ly/items/1j1P0N0D1h0I0S1y3z04/Screen%20Shot%202013-08-12%20at%2009.00.17.png)
+	
+## Postico
+
+* Free
+* Download: [https://eggerapps.at/postico/](https://eggerapps.at/postico/)
+* Sucessor to PG Commander
+
+	![https://eggerapps.at/postico/screenshots/table-content-view.png](https://eggerapps.at/postico/screenshots/table-content-view.png)
 
 
 ## Shuttle
