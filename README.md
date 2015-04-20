@@ -1,14 +1,6 @@
 Agency Leroy Developer Guidelines
 ==========
 
-# Things we need to get better at
-
-* Cache and optimization
-* Performance & Success metrics
-* Split testing
-* Maintenance (security updates!!)
-* Continuous integration
-
 # Tools
 
 ## Anvil
@@ -746,6 +738,14 @@ Further paragraphs come after blank lines.
 
 - Use a hanging indent
 ```
+
+# Things we need to get better at
+
+* Cache and optimization
+* Performance & Success metrics
+* Split testing
+* Maintenance (security updates!!)
+* Continuous integration
 
 # TO-DO
 =========
