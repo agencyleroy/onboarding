@@ -636,6 +636,16 @@ Something you don't think about a lot is notifications about that everything is 
    ---------
   * 5 websites pers server
   * 200 SMS alerts per month
+  
+
+### Skylight
+
+#### Free
+  * Limited amount of requests
+  * Better breakdown and insight than Newrelic
+  * Only for Rails applications :(
+   
+  
 
 ### Newrelic
 
@@ -676,7 +686,8 @@ We have to know every time a user sees an error, who the user is and the environ
 
   * Airbrake ($45/month)
   * Exceptional ($9/month)
-  * **Errbit** (free)
+  * Errbit (free)
+  * **Rollbar** [https://rollbar.com](https://rollbar.com)
   * Exception Notification (email only)
   
 One of the best experiences you can have as a user after seing an error is someone emailing you ten minutes later telling you that the problem is fixed.
