@@ -20,6 +20,12 @@ Agency Leroy Developer Guidelines
 
 ![http://f.cl.ly/items/0X1L1J0j1S3m0H113m26/Screen%20Shot%202013-08-12%20at%2008.56.40.png](http://f.cl.ly/items/0X1L1J0j1S3m0H113m26/Screen%20Shot%202013-08-12%20at%2008.56.40.png)
 
+## ImageOtim
+
+* Free
+* Download: [https://imageoptim.com/](https://imageoptim.com/)
+* Drag the whole img folder of a project into the window at it will compress all images with the optimal algorithms
+
 
 ## PG Commander
 
