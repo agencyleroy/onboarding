@@ -3,15 +3,6 @@ Agency Leroy Developer Guidelines
 
 # Tools
 
-## Anvil
-
-* Free
-* Download: [http://anvilformac.com/](http://anvilformac.com/)
-* All your different Rails applications mounted as [http://name.dev](http://name.dev) and you never have to run any `rails server`commands again
-
-	![http://f.cl.ly/items/2z2A1A0M460C1r1N1H38/Screen%20Shot%202013-08-12%20at%2008.58.21.png](http://f.cl.ly/items/2z2A1A0M460C1r1N1H38/Screen%20Shot%202013-08-12%20at%2008.58.21.png)
-
-
 ## Dash
 
 * Free
@@ -68,7 +59,7 @@ Agency Leroy Developer Guidelines
 
 ## Git Tower
 
-* 49â‚¬
+* 49€
 * Buy: [http://www.git-tower.com/](http://www.git-tower.com/)
 * If version-control in the commandline isn't for you
 * Makes it really easy to do a lot of very compex git functions that would otherwise have you reading docs every time you want to do something a little different
@@ -202,6 +193,20 @@ a {
 
 BEM stands for Block Element Modifier and provides a ruleset for naming of CSS classes. While the syntax might seem weird at first, the benefits provided clearly outweights any downsides. Each block should be built as a stand alone component that can be inserted anywhere on the webpage without breaking. The styling of each block should be separated into a single partial scss file, which may use globally defined variables and mixins.
 
+The class naming follows the following syntax:
+
+```scss
+ .block {
+   /* Component container styling */
+ }
+ .block__element {
+   /* Styling of individual elements of the component */
+ }
+ .block__element--modifier {
+   /* Styling of elements with a modifier, for example 'active' */
+ }
+```
+
 ### Folder structure
 
 ```
@@ -305,7 +310,7 @@ If the styling has to be applied to more than one page, consider using a --modif
 
 ## JavaScript
 * **CoffeeScript** > JavaScript (CoffeeScript encourages a more object-oriented design and is more readable and compiles to more efficient javascript code than most developers are capable of writing themselves, without making it any harder)
-* AngularJS / Backbone.js / Ember.js
+* React.js / Ember.js
 * **Handlebars.js** templating
 * Variables refering to a jQuery object are prepended with $
 
@@ -355,81 +360,13 @@ if el['option_type_name'] is key and el['name'] is value
 ```
 
 ## Templating
-* **ERB** > Slim > HAML
-
-Slim example:
-
-```slim
-doctype html
-html
-  head
-    title Slim Examples
-    meta name="keywords" content="template language"
-    meta name="author" content=author
-    javascript:
-      alert('Slim supports embedded javascript!')
-
-  body
-    h1 Markup examples
-
-    #content
-      p This example shows you how a basic Slim file looks like.
-
-      == yield
-
-      - unless items.empty?
-        table
-          - for item in items do
-            tr
-              td.name = item.name
-              td.price = item.price
-      - else
-        p
-         | No items found.  Please add some inventory.
-           Thank you!
-```
-
-HAML example:
-
-```haml
-%html
-  %head
-    %title= "Film Fest :: "+controller.controller_name.capitalize
-    = stylesheet_link_tag 'screen'
-    = javascript_include_tag 'ufo'
-  %body
-    #container
-      #banner
-        %h1 Podcast Film Festival
-      #left
-        %h2 Menu
-        %ul
-          - if logged_in?
-            %li= link_to "My Account", edit_user_url(current_user)
-            %li= link_to "Films", categories_url
-            %li= link_to "Messages", view_messages_for_user_url({:user_id =&gt; "#{current_user.id}"})
-            %li= link_to "My Blog", view_blog_for_user_url({:user_id =&gt; "#{current_user.id}"})
-            %li= link_to "Log out", logout_url
-          %li Invite Friends
-          %li= link_to "Users", users_url
-          - unless logged_in?
-            %li
-              = link_to "Log In", new_session_url
-          - if is_admin?
-            %h3 Logged in as an admin
-            %p administration privileges granted
-            %li= link_to "Pages", pages_url
-            %li= link_to "Approve Assets", assets_url
-      #content
-        = yield
-
-```
+* **Twig** / **ERB**
 
 
 ## Optimization
 
 1. Serve all assets minified, combined and gziped
-2. "Smush" images with for example [http://smush.it/](http://smush.it/)
+2. "Smush" images with ImageOptim
 3. Use CDN
 4. Dns prefetch with for example `<link rel="dns-prefetch" href="//www.googletagservices.com" />` so that for example font-libraries load faster
 
@@ -545,6 +482,7 @@ HAML example:
 ## PHP
 
 * PHP is still a fact of life
+* We use CraftCMS
 * Snake case variable and function names, `$variable_name` and `some_function()` not `$variableName` and `someFunction()`
 * One space in between operators and their operands: `$value / 2`, `$variable = 5`, `$variable <= 20`
 * Function declarations and conditionals: opening bracket on the same line, one space each in before and after the parentheses: `if ($var > 0) {` not `if($var > 0){` or
@@ -592,6 +530,7 @@ not
 
 For static pages, we might want to consider using micro-frameworks such as
 
+  * Phoenix (Elixir)
   * Flask (Python)
   * Revel (Go)
   * Sinatra (Ruby)
@@ -716,11 +655,10 @@ One of the best experiences you can have as a user after seing an error is someo
 ## Reverse-proxy
 
 * **Nginx**
-* Varnish?
+* Varnish
 
 ## Web server
 
-* **Unicorn**
 * **Puma** (need to investigate)
 
 ## Deployment
